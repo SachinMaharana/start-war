@@ -1,4 +1,4 @@
-const starWarNames = require('./star-wars-names.json');
+const starWarNames = require("./star-wars-names.json");
 
 const getRandomItem = () =>
   starWarNames[Math.floor(Math.random() * starWarNames.length)];
@@ -20,5 +20,5 @@ const random = function random(number) {
 
 module.exports = {
   all,
-  random,
+  random
 };
