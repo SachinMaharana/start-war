@@ -1,27 +1,24 @@
-"use strict";
+const starWarNames = require('./star-wars-names.json');
 
-const starWarNames = require("./star-wars-names.json");
-
-let getRandomItem = () =>
+const getRandomItem = () =>
   starWarNames[Math.floor(Math.random() * starWarNames.length)];
 
-const all = function() {
+const all = function all() {
   return starWarNames;
 };
 
-const random = function(number) {
+const random = function random(number) {
   if (number === undefined) {
     return getRandomItem();
-  } else {
-    const randomItems = [];
-    for (let i = 0; i < number; i++) {
-      randomItems.push(getRandomItem());
-    }
-    return randomItems;
   }
+  const randomItems = [];
+  for (let i = 0; i < number; i += 1) {
+    randomItems.push(getRandomItem());
+  }
+  return randomItems;
 };
 
 module.exports = {
   all,
-  random
+  random,
 };
